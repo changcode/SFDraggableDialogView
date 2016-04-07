@@ -26,6 +26,8 @@
     SFDraggableDialogView *dialogView = [[[NSBundle mainBundle] loadNibNamed:@"SFDraggableDialogView" owner:self options:nil] firstObject];
     dialogView.frame = self.view.bounds;
     dialogView.photo = [UIImage imageNamed:@"face"];
+    dialogView.isSquarePhoto = NO;
+    
     dialogView.delegate = self;
     dialogView.titleText = [[NSMutableAttributedString alloc] initWithString:@"Round is over"];
     dialogView.messageText = [self exampleAttributeString];

@@ -129,6 +129,11 @@ typedef NS_ENUM(NSInteger, SFContentViewType) {
 @property (nonatomic, strong) UIImage *photo;
 
 /**
+ *  Image is circular or square
+ */
+@property (nonatomic, assign) BOOL isSquarePhoto;
+
+/**
  *  Title text. Title label is suppose to have one line.
  */
 @property (nonatomic, strong) NSMutableAttributedString *titleText;

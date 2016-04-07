@@ -417,7 +417,8 @@ typedef NS_ENUM(NSInteger, SFPanDirection) {
 - (void)setPhoto:(UIImage *)photo {
     _photo = photo;
     self.photoImageView.image = photo;
-    self.photoImageView.layer.cornerRadius = self.photoImageView.frame.size.width / 2.0;
+    if (_isSquarePhoto)
+        self.photoImageView.layer.cornerRadius = self.photoImageView.frame.size.width / 2.0;
     self.photoImageView.layer.masksToBounds = true;
 }
 
