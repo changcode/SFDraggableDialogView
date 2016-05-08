@@ -25,10 +25,11 @@
 - (IBAction)showBtnPressed:(id)sender {
     SFDraggableDialogView *dialogView = [[[NSBundle mainBundle] loadNibNamed:@"SFDraggableDialogView" owner:self options:nil] firstObject];
     dialogView.frame = self.view.bounds;
-    dialogView.photo = [UIImage imageNamed:@"face"];
+    dialogView.photo = [UIImage imageNamed:@"1"];
     dialogView.isSquarePhoto = NO;
     
     dialogView.delegate = self;
+    dialogView.draggable = NO;
     dialogView.titleText = [[NSMutableAttributedString alloc] initWithString:@"Round is over"];
     dialogView.messageText = [self exampleAttributeString];
     dialogView.firstBtnText = [@"See results" uppercaseString];

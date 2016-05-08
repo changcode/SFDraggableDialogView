@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -66,39 +65,35 @@
                                                 <constraint firstItem="02m-FL-ujc" firstAttribute="centerY" secondItem="6Tm-Ph-7vb" secondAttribute="centerY" constant="17" id="zVU-tc-Pfs"/>
                                             </constraints>
                                         </view>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="haj-nf-xLL">
-                                            <rect key="frame" x="78" y="30" width="114" height="114"/>
-                                            <color key="backgroundColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
+                                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="stl-mL-xAe">
+                                            <rect key="frame" x="3" y="8" width="264" height="144"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" secondItem="haj-nf-xLL" secondAttribute="height" multiplier="1:1" id="Hum-C7-Vnv"/>
-                                                <constraint firstAttribute="height" constant="150" id="Irp-Zf-ibq"/>
-                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="UsH-zx-EkT"/>
+                                                <constraint firstAttribute="width" constant="270" id="qap-tT-0ez"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="Irp-Zf-ibq"/>
-                                                    <exclude reference="UsH-zx-EkT"/>
+                                                    <exclude reference="qap-tT-0ez"/>
                                                 </mask>
                                             </variation>
-                                        </imageView>
+                                        </scrollView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstItem="haj-nf-xLL" firstAttribute="centerY" secondItem="qXm-o6-PU0" secondAttribute="centerY" constant="-30" id="41g-5v-3c9"/>
+                                        <constraint firstItem="stl-mL-xAe" firstAttribute="centerX" secondItem="qXm-o6-PU0" secondAttribute="centerX" id="2R1-Dt-Tiq"/>
+                                        <constraint firstAttribute="bottom" secondItem="stl-mL-xAe" secondAttribute="bottom" constant="87" id="GWx-ml-EHK"/>
                                         <constraint firstAttribute="bottom" secondItem="6Tm-Ph-7vb" secondAttribute="bottom" constant="8" id="NcQ-qs-23q"/>
                                         <constraint firstAttribute="trailing" secondItem="6Tm-Ph-7vb" secondAttribute="trailing" constant="8" id="W2X-zm-xYl"/>
-                                        <constraint firstItem="6Tm-Ph-7vb" firstAttribute="top" secondItem="haj-nf-xLL" secondAttribute="bottom" constant="8" id="bHi-Dc-gCT"/>
-                                        <constraint firstItem="haj-nf-xLL" firstAttribute="top" secondItem="qXm-o6-PU0" secondAttribute="top" constant="30" id="cEn-Nw-yKn"/>
-                                        <constraint firstItem="6Tm-Ph-7vb" firstAttribute="top" secondItem="haj-nf-xLL" secondAttribute="bottom" constant="8" id="cxI-qR-IVL"/>
+                                        <constraint firstItem="stl-mL-xAe" firstAttribute="top" secondItem="qXm-o6-PU0" secondAttribute="top" constant="8" id="XU6-xL-Fdd"/>
                                         <constraint firstItem="6Tm-Ph-7vb" firstAttribute="leading" secondItem="qXm-o6-PU0" secondAttribute="leading" constant="8" id="fuq-JL-0oQ"/>
-                                        <constraint firstItem="haj-nf-xLL" firstAttribute="centerX" secondItem="qXm-o6-PU0" secondAttribute="centerX" id="laK-mp-TSD"/>
-                                        <constraint firstItem="6Tm-Ph-7vb" firstAttribute="top" secondItem="haj-nf-xLL" secondAttribute="bottom" constant="8" id="tov-bo-A6S"/>
+                                        <constraint firstAttribute="trailing" secondItem="stl-mL-xAe" secondAttribute="trailing" constant="3" id="qsF-ic-eRV"/>
+                                        <constraint firstItem="stl-mL-xAe" firstAttribute="top" secondItem="qXm-o6-PU0" secondAttribute="top" constant="8" id="x2w-0U-Xea"/>
+                                        <constraint firstItem="stl-mL-xAe" firstAttribute="leading" secondItem="qXm-o6-PU0" secondAttribute="leading" constant="3" id="yG9-R7-DAh"/>
+                                        <constraint firstItem="stl-mL-xAe" firstAttribute="bottom" secondItem="6Tm-Ph-7vb" secondAttribute="top" id="zms-ez-teJ"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
-                                            <exclude reference="41g-5v-3c9"/>
-                                            <exclude reference="cxI-qR-IVL"/>
-                                            <exclude reference="tov-bo-A6S"/>
+                                            <exclude reference="GWx-ml-EHK"/>
+                                            <exclude reference="XU6-xL-Fdd"/>
                                         </mask>
                                     </variation>
                                 </view>
@@ -252,6 +247,7 @@
                 <constraint firstAttribute="bottom" secondItem="jvZ-Vs-W6z" secondAttribute="bottom" constant="109" id="G83-eB-bOL"/>
                 <constraint firstItem="jvZ-Vs-W6z" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="IRm-pC-zCq"/>
                 <constraint firstItem="RCg-fw-XMM" firstAttribute="top" secondItem="dWE-Pe-cvq" secondAttribute="bottom" constant="10" id="J9A-Ir-ee7"/>
+                <constraint firstItem="stl-mL-xAe" firstAttribute="top" secondItem="i8P-WS-7R6" secondAttribute="top" id="Qdr-sV-tDE"/>
                 <constraint firstItem="dWE-Pe-cvq" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Xjz-8M-ze7"/>
                 <constraint firstItem="iY8-HY-lZW" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="dKp-xs-OEz"/>
                 <constraint firstAttribute="trailing" secondItem="iY8-HY-lZW" secondAttribute="trailing" id="gj3-5l-KRl"/>
@@ -262,6 +258,11 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="Qdr-sV-tDE"/>
+                </mask>
+            </variation>
             <connections>
                 <outlet property="backgroundImageBtn" destination="iY8-HY-lZW" id="tAg-Ov-CqK"/>
                 <outlet property="cancelArrowBtnBottom" destination="lKG-sa-r2F" id="nKi-xp-Tno"/>
@@ -279,7 +280,7 @@
                 <outlet property="firstBtn" destination="ZN5-9d-8sQ" id="6iS-tq-FYS"/>
                 <outlet property="gameOverCustomViewVerticalOffsetCns" destination="Ao8-l3-Jdv" id="LCg-1h-pvC"/>
                 <outlet property="messageLbl" destination="02m-FL-ujc" id="Dsj-P0-gVo"/>
-                <outlet property="photoImageView" destination="haj-nf-xLL" id="kjX-lD-pTD"/>
+                <outlet property="scrollView" destination="stl-mL-xAe" id="xe0-cc-z2Q"/>
                 <outlet property="secondBtn" destination="RKc-m0-ZFl" id="652-oK-QC2"/>
                 <outlet property="shadowView" destination="jvZ-Vs-W6z" id="gQE-De-ZrN"/>
                 <outlet property="titleLbl" destination="q1d-ey-QLn" id="sYP-sX-0ef"/>

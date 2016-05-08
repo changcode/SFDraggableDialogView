@@ -14,14 +14,15 @@ typedef NS_ENUM(NSInteger, SFPanDirection) {
     SFPanDirectionOthers
 };
 
-@interface SFDraggableDialogView()
+@interface SFDraggableDialogView() <UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *dialogView;
 @property (weak, nonatomic) IBOutlet UIView *shadowView;
 @property (weak, nonatomic) IBOutlet UIView *cancelViewBottom;
 
 // Content
-@property (weak, nonatomic) IBOutlet UIImageView *photoImageView;
+@property (strong, nonatomic)        UIImageView *photoImageView;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UILabel *messageLbl;
 @property (weak, nonatomic) IBOutlet UILabel *titleLbl;
 @property (weak, nonatomic) IBOutlet UIButton *cancelArrowBtnBottom;
@@ -84,7 +85,7 @@ typedef NS_ENUM(NSInteger, SFPanDirection) {
     [self showCancelArrow:true];
     
     // Layout if needed
-    self.photo = _photo;
+//    self.photo = _photo;
 }
 
 - (void)defaultSetup {
@@ -416,10 +417,21 @@ typedef NS_ENUM(NSInteger, SFPanDirection) {
 
 - (void)setPhoto:(UIImage *)photo {
     _photo = photo;
-    self.photoImageView.image = photo;
+
+    self.photoImageView = [[UIImageView alloc] initWithImage:_photo];
+    self.photoImageView.frame = self.scrollView.frame;
+    self.photoImageView.contentMode = UIViewContentModeScaleAspectFill;
     if (_isSquarePhoto)
         self.photoImageView.layer.cornerRadius = self.photoImageView.frame.size.width / 2.0;
     self.photoImageView.layer.masksToBounds = true;
+    
+    self.scrollView.delegate = self;
+    self.scrollView.minimumZoomScale = 1.0;
+    self.scrollView.maximumZoomScale = 5.0;
+    self.scrollView.zoomScale = 1.0;
+    self.scrollView.bouncesZoom = YES;
+    
+    [self.scrollView addSubview:self.photoImageView];
 }
 
 - (void)setTitleText:(NSMutableAttributedString *)titleText {
@@ -618,6 +630,45 @@ typedef NS_ENUM(NSInteger, SFPanDirection) {
         weakSelf.cancelArrowImageViewBottom.alpha = 1.0;
         weakSelf.cancelArrowImageViewTop.alpha = 1.0;
     }];
+}
+#pragma mark - UIScrollView Delegate
+
+/* 在scrollview中Zoom的目标视图 */
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
+    return self.photoImageView;
+}
+
+/* scrollview将要开始Zooming */
+- (void)scrollViewWillBeginZooming:(UIScrollView *)scrollView withView:(UIView *)view {
+    NSLog(@"Begin Zooming");
+}
+
+/* scrollview已经发生了Zoom事件 */
+- (void)scrollViewDidZoom:(UIScrollView *)scrollView {
+    NSLog(@"Did Zoom");
+}
+
+/* scrollview完成Zooming */
+- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(CGFloat)scale {
+    if (self.scrollView.zoomScale > 1) {
+        //        image.center = CGPointMake(self.scroll.contentSize.width / 2, self.scroll.contentSize.height / 2);
+    }
+    else {
+        //        image.center = self.scroll.center;
+    }
+    
+    CGSize size = self.scrollView.contentSize;
+    //    NSLog(@"Content size of scroll view");
+    //    NSLog(@"w = %f, h = %f", size.width, size.height);
+    //    NSLog(@"----------------------------");
+    
+    //    NSLog(@"zoomscale = %f", self.scrollView.zoomScale);
+    //    NSLog(@"----------------------------");
+    
+    CGRect boundsOfScrollView = self.scrollView.bounds;
+    //    NSLog(@"Bounds of scroll view");
+    //    NSLog(@"x = %f, y = %f", boundsOfScrollView.origin.x, boundsOfScrollView.origin.y);
+    //    NSLog(@"w = %f, h = %f", boundsOfScrollView.size.width, boundsOfScrollView.size.height);
 }
 
 @end
