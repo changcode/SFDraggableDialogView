@@ -30,7 +30,7 @@
     
     dialogView.delegate = self;
     dialogView.draggable = NO;
-    dialogView.titleText = [[NSMutableAttributedString alloc] initWithString:@"Round is over"];
+    dialogView.titleText = [[NSMutableAttributedString alloc] initWithString:@"Round is overRound is overRound is overRound is overRound is overRound is overRound is over"];
     dialogView.messageText = [self exampleAttributeString];
     dialogView.firstBtnText = [@"See results" uppercaseString];
     dialogView.dialogBackgroundColor = [UIColor whiteColor];

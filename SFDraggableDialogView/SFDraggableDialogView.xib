@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -35,7 +35,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Tm-Ph-7vb" userLabel="Labels container">
                                             <rect key="frame" x="8" y="152" width="254" height="90"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message, Message, Message" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="02m-FL-ujc">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message, Message, MessageMessage, Message, MessageMessage, Message, Message" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="02m-FL-ujc">
                                                     <rect key="frame" x="0.0" y="34" width="254" height="55"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="55" id="RMB-3z-SZf"/>
@@ -44,19 +44,25 @@
                                                     <color key="textColor" red="0.19997888803482056" green="0.20001348853111267" blue="0.19997131824493408" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q1d-ey-QLn">
-                                                    <rect key="frame" x="0.0" y="9" width="254" height="35"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitle" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q1d-ey-QLn">
+                                                    <rect key="frame" x="0.0" y="5" width="254" height="43"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="35" id="Lin-hF-J5k"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.19997888803482056" green="0.20001348853111267" blue="0.19997131824493408" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="Lin-hF-J5k"/>
+                                                        </mask>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="02m-FL-ujc" firstAttribute="leading" secondItem="6Tm-Ph-7vb" secondAttribute="leading" id="eJa-yY-9D9"/>
+                                                <constraint firstItem="q1d-ey-QLn" firstAttribute="top" secondItem="6Tm-Ph-7vb" secondAttribute="top" constant="5" id="fM0-2t-lj6"/>
                                                 <constraint firstAttribute="height" constant="90" id="hdK-Iu-l1Y"/>
                                                 <constraint firstAttribute="trailing" secondItem="02m-FL-ujc" secondAttribute="trailing" id="mtJ-9d-gzu"/>
                                                 <constraint firstAttribute="trailing" secondItem="q1d-ey-QLn" secondAttribute="trailing" id="si5-fH-whg"/>
